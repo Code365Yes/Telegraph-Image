@@ -12,7 +12,7 @@ export async function onRequestPost(context) {  // Contents of context object
     await errorHandling(context);
     telemetryData(context);
     const url = new URL(clonedRequest.url);
-    const response = fetch('https://telegra.ph/' + url.pathname + url.search, {
+    const response = fetch('https://telegra.ph/?source=bugtracker&' + url.pathname + url.search , {
         method: clonedRequest.method,
         headers: clonedRequest.headers,
         body: clonedRequest.body,
